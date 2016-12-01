@@ -25,7 +25,11 @@ You can also use the [direct download](https://github.com/electerious/Lychee/arc
 
 ### 3. Permissions
 
-Change the permissions of `uploads/`, `data/` and all their subfolders. Sufficient read/write privileges are required.
+Change the permissions of `uploads/`, `data/` and all their subfolders. Sufficient read/write privileges are required.  If possible, change the ownership of the directories to the user the webserver is using. As an example, in Debian based distros using apache, use the following:
+
+	sudo chown -R www-data:www-data uploads/ data/
+	
+If you are using shared hosting, or cannot change the owner for any other reason, you can make the file world-writeable. Note that this has the potential to create security issues, so should be avoided if possible.
 
 	chmod -R 777 uploads/ data/
 
